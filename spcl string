@@ -1,0 +1,40 @@
+public class Main
+{
+    String name;
+    int len;
+    char[] vol={'a','e','i','o','u','A','E','I','O','U'};
+    public String Check(String Name)
+    {
+        name=Name;
+        len= name.length();
+        for(int i=0;i<=len;i++)
+        {
+        if(name.charAt(0)== vol[i] || name.charAt(len-1)==vol[i])
+        {
+        return "NO";
+        }
+        }
+        for(int i=1;i<=len-1;i++)
+        {
+            for(int j=0;j<=len;j++)
+            {
+            if(name.charAt(i)==vol[j])
+            {
+                return "Yes";
+            }
+            }
+        }
+    
+    return "NO";
+    }
+    
+	public static void main(String[] args) {
+	    Main obj = new Main();
+	    String output=obj.Check("Kamal");
+		System.out.println(output);
+	}
+}
+
+/* There will be to condtions here :
+    1.Given string does not contain vowels at first and last postion.
+    2.Then with repect of the first condition the given string does not contain more than more than 2 vowels.*/
